@@ -8,39 +8,49 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Dancing+Script:wght@500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 <style>
 
 /* =====================================================
-   RESET
+   RESET & MOBILE OVERFLOW FIX
 ===================================================== */
 
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-html{
-    scroll-behavior:smooth;
+html {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
 }
 
-body{
-    font-family:'Poppins',sans-serif;
-    color:#6d3b50;
-    overflow-x:hidden;
+body {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    overflow-x: hidden;
+
+    font-family: 'Poppins', sans-serif;
+    color: #6d3b50;
 
     background:
-        radial-gradient(circle at 15% 15%,
-        rgba(255,255,255,.8),
-        transparent 25%),
-
-        radial-gradient(circle at 85% 10%,
-        rgba(255,180,215,.45),
-        transparent 28%),
-
+        radial-gradient(
+            circle at 15% 15%,
+            rgba(255,255,255,.8),
+            transparent 25%
+        ),
+        radial-gradient(
+            circle at 85% 10%,
+            rgba(255,180,215,.45),
+            transparent 28%
+        ),
         linear-gradient(
             135deg,
             #ffeaf3,
@@ -49,36 +59,41 @@ body{
         );
 }
 
+img,
+video {
+    max-width: 100%;
+}
+
 
 /* =====================================================
    FLOATING ORNAMENT
 ===================================================== */
 
-.floating{
-    position:fixed;
-    z-index:0;
-    pointer-events:none;
-    animation:float 7s ease-in-out infinite;
+.floating {
+    position: fixed;
+    z-index: 0;
+    pointer-events: none;
+    animation: float 7s ease-in-out infinite;
 }
 
-.heart{
-    color:#ef8fb3;
-    font-size:28px;
+.heart {
+    color: #ef8fb3;
+    font-size: 28px;
 }
 
-.flower{
-    color:#e99bb9;
-    font-size:30px;
+.flower {
+    color: #e99bb9;
+    font-size: 30px;
 }
 
-@keyframes float{
+@keyframes float {
 
-    0%,100%{
-        transform:translateY(0) rotate(0deg);
+    0%,100% {
+        transform: translateY(0) rotate(0deg);
     }
 
-    50%{
-        transform:translateY(-25px) rotate(10deg);
+    50% {
+        transform: translateY(-25px) rotate(10deg);
     }
 
 }
@@ -88,36 +103,32 @@ body{
    HERO
 ===================================================== */
 
-.hero{
+.hero {
+    width: 100%;
+    min-height: 100vh;
 
-    min-height:100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-    display:flex;
-    justify-content:center;
-    align-items:center;
+    text-align: center;
 
-    text-align:center;
+    padding: 40px 20px;
 
-    padding:40px 20px;
-
-    position:relative;
-
-    overflow:hidden;
+    position: relative;
+    overflow: hidden;
 }
 
-.hero-content{
+.hero-content {
+    position: relative;
+    z-index: 5;
 
-    position:relative;
-
-    z-index:5;
-
-    max-width:950px;
-
+    width: 100%;
+    max-width: 950px;
 }
 
-.crown{
-
-    font-size:70px;
+.crown {
+    font-size: 70px;
 
     animation:
         crownFloat 3s
@@ -125,82 +136,69 @@ body{
         infinite;
 }
 
-@keyframes crownFloat{
+@keyframes crownFloat {
 
-    0%,100%{
-        transform:translateY(0);
+    0%,100% {
+        transform: translateY(0);
     }
 
-    50%{
-        transform:translateY(-12px);
+    50% {
+        transform: translateY(-12px);
     }
 
 }
 
-.small-title{
-
-    font-family:'Cinzel',serif;
-
-    letter-spacing:5px;
-
-    color:#b75d7e;
-
-    font-size:15px;
-
+.small-title {
+    font-family: 'Cinzel', serif;
+    letter-spacing: 5px;
+    color: #b75d7e;
+    font-size: 15px;
 }
 
-.hero h1{
-
-    font-family:'Dancing Script',cursive;
+.hero h1 {
+    font-family: 'Dancing Script', cursive;
 
     font-size:
-        clamp(55px,9vw,110px);
+        clamp(55px, 9vw, 110px);
 
-    color:#d45c8a;
+    color: #d45c8a;
 
     text-shadow:
         3px 3px 0 #fff,
-        5px 5px 15px
-        rgba(160,60,100,.2);
+        5px 5px 15px rgba(160,60,100,.2);
 
-    margin:10px 0;
-
+    margin: 10px 0;
 }
 
-.hero h2{
+.hero h2 {
+    font-family: 'Cinzel', serif;
 
-    font-family:'Cinzel',serif;
-
-    color:#9e4969;
+    color: #9e4969;
 
     font-size:
-        clamp(18px,3vw,28px);
+        clamp(18px, 3vw, 28px);
 
-    letter-spacing:3px;
-
+    letter-spacing: 3px;
 }
 
-.hero p{
+.hero p {
+    margin: 25px auto;
 
-    margin:25px auto;
+    max-width: 650px;
 
-    max-width:650px;
+    line-height: 1.8;
 
-    line-height:1.8;
-
-    color:#855268;
-
+    color: #855268;
 }
 
-.start-btn{
+.start-btn {
+    display: inline-block;
 
-    display:inline-block;
+    margin-top: 15px;
 
-    margin-top:15px;
+    padding: 14px 30px;
 
-    padding:14px 30px;
-
-    border-radius:40px;
+    border-radius: 40px;
 
     background:
         linear-gradient(
@@ -209,24 +207,21 @@ body{
             #c94d7c
         );
 
-    color:white;
+    color: white;
 
-    text-decoration:none;
+    text-decoration: none;
 
     box-shadow:
         0 10px 30px
         rgba(200,70,120,.3);
 
-    transition:.3s;
-
+    transition: .3s;
 }
 
-.start-btn:hover{
-
+.start-btn:hover {
     transform:
         translateY(-5px)
         scale(1.03);
-
 }
 
 
@@ -234,93 +229,77 @@ body{
    BALLOONS
 ===================================================== */
 
-.balloon{
+.balloon {
+    position: absolute;
 
-    position:absolute;
+    width: 55px;
+    height: 70px;
 
-    width:55px;
+    border-radius: 50%;
 
-    height:70px;
+    background: #f6a4c2;
 
-    border-radius:50%;
-
-    background:#f6a4c2;
-
-    bottom:-100px;
+    bottom: -100px;
 
     animation:
         balloonUp 10s
         linear infinite;
 
-    opacity:.8;
-
+    opacity: .8;
 }
 
-.balloon::after{
+.balloon::after {
+    content: "";
 
-    content:"";
+    position: absolute;
 
-    position:absolute;
+    width: 1px;
+    height: 120px;
 
-    width:1px;
+    background: #b96d88;
 
-    height:120px;
-
-    background:#b96d88;
-
-    left:50%;
-
-    top:68px;
-
+    left: 50%;
+    top: 68px;
 }
 
-.balloon:nth-child(1){
-
-    left:8%;
-
-    animation-delay:0s;
-
+.balloon:nth-child(1) {
+    left: 8%;
+    animation-delay: 0s;
 }
 
-.balloon:nth-child(2){
+.balloon:nth-child(2) {
+    left: 25%;
 
-    left:25%;
+    animation-delay: 3s;
 
-    animation-delay:3s;
-
-    background:#f8bfd5;
-
+    background: #f8bfd5;
 }
 
-.balloon:nth-child(3){
+.balloon:nth-child(3) {
+    right: 20%;
 
-    right:20%;
+    animation-delay: 5s;
 
-    animation-delay:5s;
-
-    background:#df7fa7;
-
+    background: #df7fa7;
 }
 
-.balloon:nth-child(4){
+.balloon:nth-child(4) {
+    right: 7%;
 
-    right:7%;
+    animation-delay: 1s;
 
-    animation-delay:1s;
-
-    background:#f6b2cc;
-
+    background: #f6b2cc;
 }
 
-@keyframes balloonUp{
+@keyframes balloonUp {
 
-    from{
+    from {
         transform:
             translateY(0)
             rotate(-5deg);
     }
 
-    to{
+    to {
         transform:
             translateY(-120vh)
             rotate(10deg);
@@ -333,39 +312,31 @@ body{
    SECTION
 ===================================================== */
 
-section{
+section {
+    position: relative;
+    z-index: 1;
 
-    position:relative;
+    width: 100%;
+    max-width: 100%;
 
-    z-index:1;
-
-    padding:
-        80px 7%;
-
+    padding: 80px 7%;
 }
 
-.section-title{
-
-    text-align:center;
-
-    margin-bottom:45px;
-
+.section-title {
+    text-align: center;
+    margin-bottom: 45px;
 }
 
-.section-title h2{
+.section-title h2 {
+    font-family: 'Dancing Script', cursive;
 
-    font-family:'Dancing Script',cursive;
+    color: #c95883;
 
-    color:#c95883;
-
-    font-size:55px;
-
+    font-size: 55px;
 }
 
-.section-title p{
-
-    color:#956175;
-
+.section-title p {
+    color: #956175;
 }
 
 
@@ -373,119 +344,97 @@ section{
    ROYAL LETTER
 ===================================================== */
 
-.letter-container{
+.letter-container {
+    width: 100%;
 
-    display:flex;
-
-    justify-content:center;
-
+    display: flex;
+    justify-content: center;
 }
 
-.royal-letter{
+.royal-letter {
+    position: relative;
 
-    position:relative;
+    width: 100%;
+    max-width: 900px;
 
-    width:min(900px,100%);
-
-    padding:
-        70px 60px;
+    padding: 70px 60px;
 
     background:
-
         linear-gradient(
             rgba(255,246,225,.94),
             rgba(255,240,213,.96)
-        ),
-
-        repeating-linear-gradient(
-            0deg,
-            transparent,
-            transparent 30px,
-            rgba(150,100,50,.05) 31px
         );
 
     border:
         10px solid #e6bd8d;
 
-    border-radius:12px;
+    border-radius: 12px;
 
     box-shadow:
-
         0 20px 50px
         rgba(110,60,70,.2),
 
         inset 0 0 40px
         rgba(150,90,40,.15);
-
 }
 
-.royal-letter::before{
+.royal-letter::before {
+    content: "";
 
-    content:"";
+    position: absolute;
 
-    position:absolute;
-
-    inset:10px;
+    inset: 10px;
 
     border:
         2px solid #d8a871;
 
-    pointer-events:none;
-
+    pointer-events: none;
 }
 
-.letter-top{
+.letter-top {
+    text-align: center;
 
-    text-align:center;
+    font-family: 'Cinzel', serif;
 
-    font-family:'Cinzel',serif;
+    color: #9b5b67;
 
-    color:#9b5b67;
+    font-size: 20px;
 
-    font-size:20px;
-
-    letter-spacing:2px;
-
+    letter-spacing: 2px;
 }
 
-.royal-letter h3{
+.royal-letter h3 {
+    font-family: 'Dancing Script', cursive;
 
-    font-family:'Dancing Script',cursive;
+    text-align: center;
 
-    text-align:center;
+    font-size: 48px;
 
-    font-size:48px;
+    color: #c35b80;
 
-    color:#c35b80;
-
-    margin:20px 0;
-
+    margin: 20px 0;
 }
 
-.royal-letter p{
+.royal-letter p {
+    line-height: 2;
 
-    line-height:2;
+    font-size: 16px;
 
-    font-size:16px;
+    margin-bottom: 15px;
 
-    margin-bottom:15px;
-
-    text-align:justify;
-
+    text-align: justify;
 }
 
-.signature{
+.signature {
+    text-align: right;
 
-    text-align:right;
+    font-family: 'Dancing Script', cursive;
 
-    font-family:'Dancing Script',cursive;
+    font-size: 32px;
 
-    font-size:32px;
+    color: #bd5579;
 
-    color:#bd5579;
-
-    margin-top:30px;
-
+    margin-top: 30px;
 }
 
 
@@ -493,185 +442,180 @@ section{
    PHOTO GALLERY
 ===================================================== */
 
-.gallery{
+.gallery {
+    width: 100%;
+    max-width: 1100px;
 
-    max-width:1100px;
+    margin: 0 auto;
 
-    margin:auto;
-
-    display:grid;
+    display: grid;
 
     grid-template-columns:
-        repeat(4,1fr);
+        repeat(4, minmax(0, 1fr));
 
-    gap:25px;
+    gap: 25px;
 
+    padding: 0;
 }
 
-.photo-card{
+.photo-card {
+    position: relative;
 
-    position:relative;
+    width: 100%;
+    max-width: 100%;
 
-    background:#fff;
+    background: #fff;
 
-    padding:12px;
+    padding: 12px;
 
-    border-radius:5px;
+    border-radius: 5px;
 
     box-shadow:
         0 12px 30px
         rgba(120,50,80,.18);
 
-    transition:.4s;
+    transition: .4s;
 
+    min-width: 0;
 }
 
-.photo-card:hover{
-
+.photo-card:hover {
     transform:
         translateY(-12px)
         rotate(0deg)
         scale(1.03);
 
-    z-index:3;
-
+    z-index: 3;
 }
 
-.photo-card:nth-child(odd){
-
-    transform:rotate(-3deg);
-
+.photo-card:nth-child(odd) {
+    transform: rotate(-3deg);
 }
 
-.photo-card:nth-child(even){
-
-    transform:rotate(3deg);
-
+.photo-card:nth-child(even) {
+    transform: rotate(3deg);
 }
 
-.photo-card img{
+.photo-card img {
+    display: block;
 
-    display:block;
+    width: 100%;
+    max-width: 100%;
 
-    width:100%;
+    aspect-ratio: 1 / 1.15;
 
-    aspect-ratio:1/1.15;
-
-    object-fit:cover;
-
+    object-fit: cover;
 }
 
-.photo-caption{
+.photo-caption {
+    width: 100%;
 
-    text-align:center;
+    text-align: center;
 
-    font-family:'Dancing Script',cursive;
+    font-family:
+        'Dancing Script',
+        cursive;
 
-    font-size:24px;
+    font-size: 24px;
 
-    padding:10px 3px 5px;
+    padding:
+        10px 3px 5px;
 
-    color:#b95178;
+    color: #b95178;
 
-}
-
-
-/* TOPI ULANG TAHUN */
-
-.party-hat{
-
-    position:absolute;
-
-    top:-35px;
-
-    right:-18px;
-
-    font-size:45px;
-
-    transform:rotate(15deg);
-
-    z-index:5;
-
+    overflow-wrap: break-word;
 }
 
 
 /* =====================================================
-   MEMORY
+   PARTY HAT
 ===================================================== */
 
-.memories{
+.party-hat {
+    position: absolute;
 
-    max-width:1000px;
+    top: -35px;
+    right: -18px;
 
-    margin:auto;
+    font-size: 45px;
 
-    display:grid;
+    transform: rotate(15deg);
 
-    grid-template-columns:
-        repeat(3,1fr);
-
-    gap:25px;
-
+    z-index: 5;
 }
 
-.memory{
 
-    padding:30px 22px;
+/* =====================================================
+   MEMORY CARDS
+===================================================== */
+
+.memories {
+    width: 100%;
+    max-width: 1000px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap: 25px;
+}
+
+.memory {
+    width: 100%;
+    min-width: 0;
+
+    padding: 30px 22px;
 
     background:
         rgba(255,255,255,.65);
 
-    backdrop-filter:blur(8px);
+    backdrop-filter: blur(8px);
 
     border:
         1px solid
         rgba(255,255,255,.8);
 
-    border-radius:25px;
+    border-radius: 25px;
 
-    text-align:center;
+    text-align: center;
 
     box-shadow:
         0 15px 35px
         rgba(170,80,110,.12);
 
-    transition:.3s;
-
+    transition: .3s;
 }
 
-.memory:hover{
-
+.memory:hover {
     transform:
         translateY(-8px);
-
 }
 
-.memory .icon{
+.memory .icon {
+    font-size: 45px;
 
-    font-size:45px;
-
-    margin-bottom:15px;
-
+    margin-bottom: 15px;
 }
 
-.memory h3{
+.memory h3 {
+    font-family:
+        'Dancing Script',
+        cursive;
 
-    font-family:'Dancing Script',cursive;
+    font-size: 30px;
 
-    font-size:30px;
+    color: #c4537d;
 
-    color:#c4537d;
-
-    margin-bottom:10px;
-
+    margin-bottom: 10px;
 }
 
-.memory p{
+.memory p {
+    line-height: 1.8;
 
-    line-height:1.8;
-
-    font-size:14px;
-
+    font-size: 14px;
 }
 
 
@@ -679,16 +623,15 @@ section{
    VIDEO
 ===================================================== */
 
-.video-wrapper{
+.video-wrapper {
+    width: 100%;
+    max-width: 900px;
 
-    max-width:900px;
+    margin: auto;
 
-    margin:auto;
-
-    padding:18px;
+    padding: 18px;
 
     background:
-
         linear-gradient(
             135deg,
             #f2c0d2,
@@ -696,58 +639,54 @@ section{
             #e7a4bd
         );
 
-    border-radius:30px;
+    border-radius: 30px;
 
     box-shadow:
         0 20px 50px
         rgba(130,50,80,.2);
-
 }
 
-.video-frame{
+.video-frame {
+    width: 100%;
 
-    background:#321e28;
+    background: #321e28;
 
-    padding:10px;
+    padding: 10px;
 
-    border-radius:20px;
-
+    border-radius: 20px;
 }
 
-.video-frame video{
+.video-frame video {
+    display: block;
 
-    display:block;
+    width: 100%;
+    max-width: 100%;
 
-    width:100%;
+    max-height: 600px;
 
-    max-height:600px;
+    border-radius: 13px;
 
-    border-radius:13px;
-
-    background:#000;
-
+    background: #000;
 }
 
 
 /* =====================================================
-   FINAL
+   FINAL MESSAGE
 ===================================================== */
 
-.final{
+.final {
+    text-align: center;
 
-    text-align:center;
-
-    padding-bottom:120px;
-
+    padding-bottom: 120px;
 }
 
-.final-box{
+.final-box {
+    width: 100%;
+    max-width: 850px;
 
-    max-width:850px;
+    margin: auto;
 
-    margin:auto;
-
-    padding:60px 35px;
+    padding: 60px 35px;
 
     background:
         rgba(255,255,255,.7);
@@ -756,52 +695,47 @@ section{
         2px solid
         rgba(205,100,140,.25);
 
-    border-radius:35px;
+    border-radius: 35px;
 
     box-shadow:
         0 20px 60px
         rgba(150,60,100,.12);
-
 }
 
-.final-box h2{
+.final-box h2 {
+    font-family:
+        'Dancing Script',
+        cursive;
 
-    font-family:'Dancing Script',cursive;
+    font-size: 65px;
 
-    font-size:65px;
-
-    color:#ca5b83;
-
+    color: #ca5b83;
 }
 
-.final-box p{
+.final-box p {
+    max-width: 650px;
 
-    max-width:650px;
+    margin: 20px auto;
 
-    margin:20px auto;
-
-    line-height:2;
-
+    line-height: 2;
 }
 
-.big-heart{
-
-    font-size:65px;
+.big-heart {
+    font-size: 65px;
 
     animation:
         heartbeat 1.4s
         infinite;
-
 }
 
-@keyframes heartbeat{
+@keyframes heartbeat {
 
-    0%,100%{
-        transform:scale(1);
+    0%,100% {
+        transform: scale(1);
     }
 
-    50%{
-        transform:scale(1.18);
+    50% {
+        transform: scale(1.18);
     }
 
 }
@@ -811,46 +745,40 @@ section{
    MUSIC BUTTON
 ===================================================== */
 
-.music-btn{
+.music-btn {
+    position: fixed;
 
-    position:fixed;
+    bottom: 25px;
+    right: 25px;
 
-    bottom:25px;
+    width: 58px;
+    height: 58px;
 
-    right:25px;
+    border: none;
 
-    width:58px;
+    border-radius: 50%;
 
-    height:58px;
+    background: #d96691;
 
-    border:none;
+    color: white;
 
-    border-radius:50%;
+    font-size: 22px;
 
-    background:#d96691;
+    cursor: pointer;
 
-    color:white;
-
-    font-size:22px;
-
-    cursor:pointer;
-
-    z-index:9999;
+    z-index: 9999;
 
     box-shadow:
         0 8px 25px
         rgba(150,50,90,.3);
 
-    transition:.3s;
-
+    transition: .3s;
 }
 
-.music-btn:hover{
-
+.music-btn:hover {
     transform:
         scale(1.1)
         rotate(10deg);
-
 }
 
 
@@ -858,37 +786,32 @@ section{
    CONFETTI
 ===================================================== */
 
-.confetti{
+.confetti {
+    position: fixed;
 
-    position:fixed;
+    top: -20px;
 
-    top:-20px;
+    width: 9px;
+    height: 14px;
 
-    width:9px;
+    z-index: 9999;
 
-    height:14px;
-
-    z-index:9999;
-
-    pointer-events:none;
+    pointer-events: none;
 
     animation:
         confettiFall
         linear
         forwards;
-
 }
 
-@keyframes confettiFall{
+@keyframes confettiFall {
 
-    to{
-
+    to {
         transform:
             translateY(110vh)
             rotate(720deg);
 
-        opacity:0;
-
+        opacity: 0;
     }
 
 }
@@ -898,9 +821,8 @@ section{
    SCROLL REVEAL
 ===================================================== */
 
-.reveal{
-
-    opacity:0;
+.reveal {
+    opacity: 0;
 
     transform:
         translateY(40px);
@@ -908,16 +830,13 @@ section{
     transition:
         opacity .8s ease,
         transform .8s ease;
-
 }
 
-.reveal.show{
-
-    opacity:1;
+.reveal.show {
+    opacity: 1;
 
     transform:
         translateY(0);
-
 }
 
 
@@ -925,116 +844,318 @@ section{
    CLICK HEART
 ===================================================== */
 
-.click-heart{
+.click-heart {
+    position: fixed;
 
-    position:fixed;
+    pointer-events: none;
 
-    pointer-events:none;
+    z-index: 10000;
 
-    z-index:10000;
-
-    font-size:22px;
+    font-size: 22px;
 
     animation:
         clickHeart 1s
         ease forwards;
-
 }
 
-@keyframes clickHeart{
+@keyframes clickHeart {
 
-    0%{
-
+    0% {
         transform:
             translate(-50%,-50%)
             scale(.5);
 
-        opacity:1;
-
+        opacity: 1;
     }
 
-    100%{
-
+    100% {
         transform:
             translate(-50%,-130px)
             scale(1.5);
 
-        opacity:0;
-
+        opacity: 0;
     }
 
 }
 
 
 /* =====================================================
-   RESPONSIVE
+   TABLET
 ===================================================== */
 
-@media(max-width:900px){
+@media (max-width: 900px) {
 
-    .gallery{
-
-        grid-template-columns:
-            repeat(2,1fr);
-
+    section {
+        padding-left: 25px;
+        padding-right: 25px;
     }
 
-    .memories{
+    .gallery {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
 
+        gap: 18px;
+    }
+
+    .memories {
         grid-template-columns:
             1fr;
-
     }
 
-    .royal-letter{
-
-        padding:
-            50px 30px;
-
+    .royal-letter {
+        padding: 50px 30px;
     }
 
 }
 
-@media(max-width:550px){
 
-    section{
+/* =====================================================
+   HP
+===================================================== */
+
+@media (max-width: 600px) {
+
+    html,
+    body {
+        width: 100%;
+        max-width: 100%;
+
+        overflow-x: hidden;
+    }
+
+    section,
+    header {
+        width: 100%;
+        max-width: 100%;
+
+        overflow: hidden;
+    }
+
+    section {
+        padding:
+            60px 15px;
+    }
+
+    /* HERO */
+
+    .hero {
+        width: 100%;
+        max-width: 100%;
 
         padding:
-            60px 20px;
-
+            35px 15px;
     }
 
-    .gallery{
-
-        grid-template-columns:1fr;
-
-        max-width:330px;
-
+    .hero-content {
+        width: 100%;
+        max-width: 100%;
     }
 
-    .hero h1{
+    .small-title {
+        font-size: 11px;
 
-        font-size:60px;
-
+        letter-spacing: 2px;
     }
 
-    .royal-letter{
+    .hero h1 {
+        font-size: 58px;
+
+        line-height: 1;
+    }
+
+    .hero h2 {
+        font-size: 17px;
+
+        letter-spacing: 2px;
+    }
+
+    .hero p {
+        font-size: 14px;
+
+        line-height: 1.7;
+    }
+
+
+    /* SECTION TITLE */
+
+    .section-title {
+        margin-bottom: 35px;
+    }
+
+    .section-title h2 {
+        font-size: 43px;
+
+        line-height: 1.1;
+    }
+
+    .section-title p {
+        font-size: 13px;
+    }
+
+
+    /* GALERI HP */
+
+    .gallery {
+        width: 100%;
+        max-width: 100%;
+
+        grid-template-columns: 1fr;
+
+        gap: 28px;
+
+        padding: 0;
+    }
+
+    .photo-card {
+        width: 100%;
+        max-width: 100%;
+
+        margin: 0;
+
+        transform: none !important;
+    }
+
+    .photo-card:hover {
+        transform:
+            translateY(-5px)
+            scale(1.01) !important;
+    }
+
+    .photo-card img {
+        width: 100%;
+        max-width: 100%;
+
+        aspect-ratio: 1 / 1.15;
+    }
+
+    .photo-caption {
+        font-size: 24px;
+    }
+
+    .party-hat {
+        top: -28px;
+        right: -5px;
+
+        font-size: 38px;
+    }
+
+
+    /* SURAT */
+
+    .letter-container {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .royal-letter {
+        width: 100%;
+        max-width: 100%;
 
         padding:
             45px 22px;
 
+        border-width: 7px;
     }
 
-    .royal-letter h3{
+    .letter-top {
+        font-size: 13px;
 
-        font-size:40px;
-
+        letter-spacing: 1px;
     }
 
-    .final-box h2{
+    .royal-letter h3 {
+        font-size: 40px;
+    }
 
-        font-size:48px;
+    .royal-letter p {
+        font-size: 14px;
 
+        line-height: 1.8;
+
+        text-align: left;
+    }
+
+    .signature {
+        font-size: 28px;
+    }
+
+
+    /* MEMORY */
+
+    .memories {
+        width: 100%;
+        max-width: 100%;
+
+        grid-template-columns: 1fr;
+
+        gap: 18px;
+    }
+
+    .memory {
+        width: 100%;
+    }
+
+
+    /* VIDEO */
+
+    .video-wrapper {
+        width: 100%;
+        max-width: 100%;
+
+        padding: 9px;
+
+        border-radius: 20px;
+    }
+
+    .video-frame {
+        padding: 6px;
+
+        border-radius: 14px;
+    }
+
+    .video-frame video {
+        width: 100%;
+        max-width: 100%;
+
+        border-radius: 9px;
+    }
+
+
+    /* FINAL */
+
+    .final {
+        padding-bottom: 100px;
+    }
+
+    .final-box {
+        width: 100%;
+        max-width: 100%;
+
+        padding:
+            45px 20px;
+    }
+
+    .final-box h2 {
+        font-size: 48px;
+
+        line-height: 1.1;
+    }
+
+    .final-box p {
+        font-size: 14px;
+
+        line-height: 1.8;
+    }
+
+
+    /* MUSIC */
+
+    .music-btn {
+        width: 52px;
+        height: 52px;
+
+        bottom: 18px;
+        right: 18px;
     }
 
 }
@@ -1052,22 +1173,22 @@ section{
 
 <div class="floating heart"
      style="left:5%;top:20%;">
-     ♥
+    ♥
 </div>
 
 <div class="floating flower"
      style="left:12%;top:70%;">
-     ✿
+    ✿
 </div>
 
 <div class="floating heart"
      style="right:8%;top:30%;">
-     ♡
+    ♡
 </div>
 
 <div class="floating flower"
      style="right:15%;top:75%;">
-     ✿
+    ✿
 </div>
 
 
@@ -1077,72 +1198,53 @@ section{
 
 <header class="hero">
 
-
-    <!-- BALLOONS -->
-
     <div class="balloon"></div>
     <div class="balloon"></div>
     <div class="balloon"></div>
     <div class="balloon"></div>
-
 
     <div class="hero-content">
-
 
         <div class="crown">
             👑
         </div>
 
-
         <div class="small-title">
             A SPECIAL DAY FOR SOMEONE SPECIAL
         </div>
-
 
         <h1>
             Sweet Seventeen
         </h1>
 
-
         <h2>
             Sayangg 💕
         </h2>
 
-
         <p>
-
             Hari ini bukan hanya tentang
             bertambahnya usia,
-
             tetapi tentang bertambahnya cerita,
             kebahagiaan,
-
             dan semua hal indah yang
             menunggu di depan.
-
         </p>
-
 
         <a href="#letter"
            class="start-btn">
-
             💌 Buka Surat Untukmu
-
         </a>
-
 
     </div>
 
 </header>
 
 
-
 <!-- =====================================================
-     ROYAL LETTER
+     SURAT KERAJAAN
 ===================================================== -->
 
 <section id="letter">
-
 
     <div class="section-title">
 
@@ -1159,90 +1261,57 @@ section{
 
     <div class="letter-container">
 
-
         <div class="royal-letter reveal">
 
-
             <div class="letter-top">
-
                 ✦ THE ROYAL BIRTHDAY LETTER ✦
-
             </div>
 
-
             <h3>
-
                 Untuk Sayangg...
-
             </h3>
 
-
             <p>
-
                 Selamat ulang tahun yang ke-17,
-                sayangg.
-
-                Hari ini adalah salah satu hari
-                yang spesial,
-
-                karena seseorang yang begitu berarti
-                sedang merayakan bertambahnya
-                satu tahun perjalanan hidupnya.
-
+                sayangg. Hari ini adalah salah satu
+                hari yang spesial, karena seseorang
+                yang begitu berarti sedang merayakan
+                bertambahnya satu tahun perjalanan
+                hidupnya.
             </p>
 
-
             <p>
-
                 Semoga di usia yang baru ini,
                 semakin banyak hal baik yang datang.
-
                 Semoga langkahmu selalu dipenuhi
                 kebahagiaan, orang-orang baik,
                 dan mimpi-mimpi yang perlahan
                 menjadi nyata.
-
             </p>
 
-
             <p>
-
                 Terima kasih sudah menjadi bagian
                 dari cerita yang begitu indah.
-
                 Mungkin tidak semua momen akan
-                selalu sempurna,
-
-                tetapi semoga setiap kenangan
-                yang kita punya tetap menjadi
-                sesuatu yang bisa membuat kita
-                tersenyum ketika mengingatnya.
-
+                selalu sempurna, tetapi semoga
+                setiap kenangan yang kita punya
+                tetap menjadi sesuatu yang bisa
+                membuat kita tersenyum ketika
+                mengingatnya.
             </p>
-
 
             <p>
-
                 Jangan pernah berhenti menjadi
-                dirimu sendiri.
-
-                Tetaplah tersenyum,
-                tetaplah bermimpi,
-
-                dan teruslah berjalan menuju
-                semua hal yang kamu inginkan.
-
+                dirimu sendiri. Tetaplah tersenyum,
+                tetaplah bermimpi, dan teruslah
+                berjalan menuju semua hal yang
+                kamu inginkan.
             </p>
 
-
             <div class="signature">
-
                 With love,<br>
-
                 Someone who cares about you 💗
-
             </div>
-
 
         </div>
 
@@ -1251,13 +1320,11 @@ section{
 </section>
 
 
-
 <!-- =====================================================
-     PHOTO GALLERY
+     GALERI
 ===================================================== -->
 
 <section>
-
 
     <div class="section-title">
 
@@ -1275,17 +1342,14 @@ section{
     <div class="gallery">
 
 
-        <!-- FOTO 1 -->
-
         <div class="photo-card reveal">
 
             <div class="party-hat">
                 🎉
             </div>
 
-            <img
-                src="foto1.jpg"
-                alt="Foto 1">
+            <img src="foto1.jpg"
+                 alt="Foto 1">
 
             <div class="photo-caption">
                 Beautiful Moment ✨
@@ -1294,17 +1358,14 @@ section{
         </div>
 
 
-        <!-- FOTO 2 -->
-
         <div class="photo-card reveal">
 
             <div class="party-hat">
                 🎂
             </div>
 
-            <img
-                src="foto2.jpg"
-                alt="Foto 2">
+            <img src="foto2.jpg"
+                 alt="Foto 2">
 
             <div class="photo-caption">
                 Sweet Memory 💕
@@ -1313,17 +1374,14 @@ section{
         </div>
 
 
-        <!-- FOTO 3 -->
-
         <div class="photo-card reveal">
 
             <div class="party-hat">
                 🎀
             </div>
 
-            <img
-                src="foto3.jpg"
-                alt="Foto 3">
+            <img src="foto3.jpg"
+                 alt="Foto 3">
 
             <div class="photo-caption">
                 A Beautiful Day 🌸
@@ -1332,17 +1390,14 @@ section{
         </div>
 
 
-        <!-- FOTO 4 -->
-
         <div class="photo-card reveal">
 
             <div class="party-hat">
                 🎈
             </div>
 
-            <img
-                src="foto4.jpg"
-                alt="Foto 4">
+            <img src="foto4.jpg"
+                 alt="Foto 4">
 
             <div class="photo-caption">
                 Precious Moment 💗
@@ -1351,17 +1406,14 @@ section{
         </div>
 
 
-        <!-- FOTO 5 -->
-
         <div class="photo-card reveal">
 
             <div class="party-hat">
                 🎂
             </div>
 
-            <img
-                src="foto5.jpg"
-                alt="Foto 5">
+            <img src="foto5.jpg"
+                 alt="Foto 5">
 
             <div class="photo-caption">
                 Always Smile 😊
@@ -1370,17 +1422,14 @@ section{
         </div>
 
 
-        <!-- FOTO 6 -->
-
         <div class="photo-card reveal">
 
             <div class="party-hat">
                 🎉
             </div>
 
-            <img
-                src="foto6.jpg"
-                alt="Foto 6">
+            <img src="foto6.jpg"
+                 alt="Foto 6">
 
             <div class="photo-caption">
                 Another Story 🌷
@@ -1389,17 +1438,14 @@ section{
         </div>
 
 
-        <!-- FOTO 7 -->
-
         <div class="photo-card reveal">
 
             <div class="party-hat">
                 🎀
             </div>
 
-            <img
-                src="foto7.jpg"
-                alt="Foto 7">
+            <img src="foto7.jpg"
+                 alt="Foto 7">
 
             <div class="photo-caption">
                 Sweet Smile 💕
@@ -1408,17 +1454,14 @@ section{
         </div>
 
 
-        <!-- FOTO 8 -->
-
         <div class="photo-card reveal">
 
             <div class="party-hat">
                 👑
             </div>
 
-            <img
-                src="foto8.jpg"
-                alt="Foto 8">
+            <img src="foto8.jpg"
+                 alt="Foto 8">
 
             <div class="photo-caption">
                 My Favorite Memory ✨
@@ -1426,11 +1469,9 @@ section{
 
         </div>
 
-
     </div>
 
 </section>
-
 
 
 <!-- =====================================================
@@ -1438,7 +1479,6 @@ section{
 ===================================================== -->
 
 <section>
-
 
     <div class="section-title">
 
@@ -1467,16 +1507,13 @@ section{
             </h3>
 
             <p>
-
                 Semoga senyum itu selalu ada,
                 karena senyum sederhana terkadang
-                mampu membuat hari menjadi
-                jauh lebih indah.
-
+                mampu membuat hari menjadi jauh
+                lebih indah.
             </p>
 
         </div>
-
 
 
         <div class="memory reveal">
@@ -1490,15 +1527,12 @@ section{
             </h3>
 
             <p>
-
                 Semoga satu per satu impianmu
                 bisa tercapai dan perjalananmu
                 selalu dipenuhi hal-hal baik.
-
             </p>
 
         </div>
-
 
 
         <div class="memory reveal">
@@ -1512,11 +1546,9 @@ section{
             </h3>
 
             <p>
-
                 Semoga setiap kenangan baik
                 yang pernah tercipta tetap menjadi
                 bagian kecil dari cerita yang indah.
-
             </p>
 
         </div>
@@ -1527,13 +1559,11 @@ section{
 </section>
 
 
-
 <!-- =====================================================
      VIDEO
 ===================================================== -->
 
 <section>
-
 
     <div class="section-title">
 
@@ -1550,9 +1580,7 @@ section{
 
     <div class="video-wrapper reveal">
 
-
         <div class="video-frame">
-
 
             <video
                 controls
@@ -1566,14 +1594,11 @@ section{
 
             </video>
 
-
         </div>
-
 
     </div>
 
 </section>
-
 
 
 <!-- =====================================================
@@ -1582,80 +1607,53 @@ section{
 
 <section class="final">
 
-
     <div class="final-box reveal">
-
 
         <div class="big-heart">
             💗
         </div>
 
-
         <h2>
-
             Happy Birthday,
             Sayangg!
-
         </h2>
 
-
         <p>
-
             Selamat menikmati perjalanan baru
-            di usia 17 tahun.
-
-            Semoga hari-harimu ke depan
-            dipenuhi tawa, kebahagiaan,
+            di usia 17 tahun. Semoga hari-harimu
+            ke depan dipenuhi tawa, kebahagiaan,
             keberanian untuk mengejar mimpi,
-
-            dan banyak sekali alasan
-            untuk tersenyum.
-
+            dan banyak sekali alasan untuk tersenyum.
         </p>
 
-
         <p>
-
             Terima kasih untuk semua cerita,
-            semua tawa,
-
-            dan semua momen indah
+            semua tawa, dan semua momen indah
             yang pernah tercipta.
-
         </p>
 
-
         <p>
-
             <b>
-
                 Once again,
                 Happy Sweet Seventeen! 🎂👑💕
-
             </b>
-
         </p>
-
 
     </div>
 
 </section>
 
 
-
 <!-- =====================================================
      MUSIC
 ===================================================== -->
 
-<audio
-    id="music"
-    loop
-    preload="auto">
-
-    <!-- GANTI DENGAN LAGU KAMU -->
+<audio id="music"
+       loop
+       preload="auto">
 
     <source
-        src="tunggaleka.mp3"
+        src="musik.mp3"
         type="audio/mpeg">
 
 </audio>
@@ -1671,11 +1669,10 @@ section{
 </button>
 
 
-
 <script>
 
 /* =====================================================
-   MUSIC AUTOPLAY
+   MUSIC
 ===================================================== */
 
 const music =
@@ -1686,13 +1683,12 @@ const musicBtn =
 
 
 /*
-   Browser akan mencoba menjalankan musik
-   ketika halaman selesai dibuka.
+   Mencoba autoplay ketika index.html dibuka.
 */
 
 window.addEventListener("load", async () => {
 
-    try{
+    try {
 
         music.volume = 0.7;
 
@@ -1702,12 +1698,7 @@ window.addEventListener("load", async () => {
 
     }
 
-    catch(error){
-
-        /*
-          Jika browser memblokir autoplay,
-          musik akan menunggu interaksi pengguna.
-        */
+    catch(error) {
 
         musicBtn.innerHTML = "🎵";
 
@@ -1716,29 +1707,28 @@ window.addEventListener("load", async () => {
 });
 
 
-
 /*
-   Klik pertama pada halaman akan
-   menjalankan musik jika autoplay
-   sebelumnya diblokir.
+   Jika autoplay diblokir browser,
+   klik pertama pada halaman akan
+   menjalankan musik.
 */
 
 document.addEventListener(
     "click",
 
-    function startMusic(){
+    function startMusic() {
 
-        if(music.paused){
+        if (music.paused) {
 
             music.volume = 0.7;
 
             music.play()
-            .then(()=>{
+                .then(() => {
 
-                musicBtn.innerHTML = "🔊";
+                    musicBtn.innerHTML = "🔊";
 
-            })
-            .catch(()=>{});
+                })
+                .catch(() => {});
 
         }
 
@@ -1749,30 +1739,26 @@ document.addEventListener(
 
     },
 
-    {once:true}
-
+    { once: true }
 );
 
 
-
 /*
-   Tombol musik
+   Tombol musik manual.
 */
 
-function toggleMusic(){
+function toggleMusic() {
 
-    if(music.paused){
+    if (music.paused) {
 
         music.play()
-        .then(()=>{
+            .then(() => {
 
-            musicBtn.innerHTML = "🔊";
+                musicBtn.innerHTML = "🔊";
 
-        });
+            });
 
-    }
-
-    else{
+    } else {
 
         music.pause();
 
@@ -1783,12 +1769,11 @@ function toggleMusic(){
 }
 
 
-
 /* =====================================================
    CONFETTI
 ===================================================== */
 
-function createConfetti(){
+function createConfetti() {
 
     const confetti =
         document.createElement("div");
@@ -1796,7 +1781,6 @@ function createConfetti(){
     confetti.classList.add(
         "confetti"
     );
-
 
     const symbols = [
         "♥",
@@ -1806,7 +1790,6 @@ function createConfetti(){
         "●"
     ];
 
-
     confetti.innerHTML =
         symbols[
             Math.floor(
@@ -1815,42 +1798,34 @@ function createConfetti(){
             )
         ];
 
-
     confetti.style.left =
-        Math.random()*100 + "vw";
-
+        Math.random() * 100 + "vw";
 
     confetti.style.fontSize =
-        (Math.random()*12+8) + "px";
-
+        (Math.random() * 12 + 8) + "px";
 
     confetti.style.animationDuration =
-        (Math.random()*3+3) + "s";
-
+        (Math.random() * 3 + 3) + "s";
 
     confetti.style.color =
         "#d96691";
-
 
     document.body.appendChild(
         confetti
     );
 
-
-    setTimeout(()=>{
+    setTimeout(() => {
 
         confetti.remove();
 
-    },6000);
+    }, 6000);
 
 }
-
 
 setInterval(
     createConfetti,
     350
 );
-
 
 
 /* =====================================================
@@ -1864,9 +1839,9 @@ const observer =
 
             entries.forEach(entry => {
 
-                if(
+                if (
                     entry.isIntersecting
-                ){
+                ) {
 
                     entry.target.classList.add(
                         "show"
@@ -1879,7 +1854,7 @@ const observer =
         },
 
         {
-            threshold:.15
+            threshold: .15
         }
 
     );
@@ -1894,7 +1869,6 @@ document
     });
 
 
-
 /* =====================================================
    CLICK HEART
 ===================================================== */
@@ -1902,37 +1876,32 @@ document
 document.addEventListener(
     "click",
 
-    function(e){
+    function(e) {
 
         const heart =
             document.createElement("div");
 
-        heart.innerHTML =
-            "💗";
+        heart.innerHTML = "💗";
 
         heart.classList.add(
             "click-heart"
         );
 
-
         heart.style.left =
             e.clientX + "px";
 
-
         heart.style.top =
             e.clientY + "px";
-
 
         document.body.appendChild(
             heart
         );
 
-
-        setTimeout(()=>{
+        setTimeout(() => {
 
             heart.remove();
 
-        },1000);
+        }, 1000);
 
     }
 
@@ -1940,7 +1909,5 @@ document.addEventListener(
 
 </script>
 
-
 </body>
 </html>
-```
