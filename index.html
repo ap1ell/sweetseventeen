@@ -8,12 +8,13 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Dancing+Script:wght@500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 <style>
 
 /* =====================================================
-   RESET & MOBILE OVERFLOW FIX
+   RESET
 ===================================================== */
 
 *,
@@ -26,14 +27,12 @@
 
 html {
     width: 100%;
-    max-width: 100%;
     overflow-x: hidden;
     scroll-behavior: smooth;
 }
 
 body {
     width: 100%;
-    max-width: 100%;
     min-width: 0;
     overflow-x: hidden;
 
@@ -73,7 +72,9 @@ video {
     position: fixed;
     z-index: 0;
     pointer-events: none;
-    animation: float 7s ease-in-out infinite;
+
+    animation:
+        float 7s ease-in-out infinite;
 }
 
 .heart {
@@ -89,11 +90,15 @@ video {
 @keyframes float {
 
     0%,100% {
-        transform: translateY(0) rotate(0deg);
+        transform:
+            translateY(0)
+            rotate(0deg);
     }
 
     50% {
-        transform: translateY(-25px) rotate(10deg);
+        transform:
+            translateY(-25px)
+            rotate(10deg);
     }
 
 }
@@ -131,9 +136,7 @@ video {
     font-size: 70px;
 
     animation:
-        crownFloat 3s
-        ease-in-out
-        infinite;
+        crownFloat 3s ease-in-out infinite;
 }
 
 @keyframes crownFloat {
@@ -150,8 +153,11 @@ video {
 
 .small-title {
     font-family: 'Cinzel', serif;
+
     letter-spacing: 5px;
+
     color: #b75d7e;
+
     font-size: 15px;
 }
 
@@ -165,7 +171,8 @@ video {
 
     text-shadow:
         3px 3px 0 #fff,
-        5px 5px 15px rgba(160,60,100,.2);
+        5px 5px 15px
+        rgba(160,60,100,.2);
 
     margin: 10px 0;
 }
@@ -226,7 +233,7 @@ video {
 
 
 /* =====================================================
-   BALLOONS
+   BALLOON
 ===================================================== */
 
 .balloon {
@@ -242,8 +249,7 @@ video {
     bottom: -100px;
 
     animation:
-        balloonUp 10s
-        linear infinite;
+        balloonUp 10s linear infinite;
 
     opacity: .8;
 }
@@ -269,25 +275,19 @@ video {
 
 .balloon:nth-child(2) {
     left: 25%;
-
     animation-delay: 3s;
-
     background: #f8bfd5;
 }
 
 .balloon:nth-child(3) {
     right: 20%;
-
     animation-delay: 5s;
-
     background: #df7fa7;
 }
 
 .balloon:nth-child(4) {
     right: 7%;
-
     animation-delay: 1s;
-
     background: #f6b2cc;
 }
 
@@ -324,6 +324,7 @@ section {
 
 .section-title {
     text-align: center;
+
     margin-bottom: 45px;
 }
 
@@ -365,8 +366,7 @@ section {
             rgba(255,240,213,.96)
         );
 
-    border:
-        10px solid #e6bd8d;
+    border: 10px solid #e6bd8d;
 
     border-radius: 12px;
 
@@ -439,7 +439,7 @@ section {
 
 
 /* =====================================================
-   PHOTO GALLERY
+   GALLERY
 ===================================================== */
 
 .gallery {
@@ -454,15 +454,12 @@ section {
         repeat(4, minmax(0, 1fr));
 
     gap: 25px;
-
-    padding: 0;
 }
 
 .photo-card {
     position: relative;
 
     width: 100%;
-    max-width: 100%;
 
     background: #fff;
 
@@ -482,7 +479,6 @@ section {
 .photo-card:hover {
     transform:
         translateY(-12px)
-        rotate(0deg)
         scale(1.03);
 
     z-index: 3;
@@ -500,7 +496,6 @@ section {
     display: block;
 
     width: 100%;
-    max-width: 100%;
 
     aspect-ratio: 1 / 1.15;
 
@@ -512,9 +507,7 @@ section {
 
     text-align: center;
 
-    font-family:
-        'Dancing Script',
-        cursive;
+    font-family: 'Dancing Script', cursive;
 
     font-size: 24px;
 
@@ -525,11 +518,6 @@ section {
 
     overflow-wrap: break-word;
 }
-
-
-/* =====================================================
-   PARTY HAT
-===================================================== */
 
 .party-hat {
     position: absolute;
@@ -546,7 +534,7 @@ section {
 
 
 /* =====================================================
-   MEMORY CARDS
+   MEMORY
 ===================================================== */
 
 .memories {
@@ -565,7 +553,6 @@ section {
 
 .memory {
     width: 100%;
-    min-width: 0;
 
     padding: 30px 22px;
 
@@ -590,8 +577,7 @@ section {
 }
 
 .memory:hover {
-    transform:
-        translateY(-8px);
+    transform: translateY(-8px);
 }
 
 .memory .icon {
@@ -601,9 +587,7 @@ section {
 }
 
 .memory h3 {
-    font-family:
-        'Dancing Script',
-        cursive;
+    font-family: 'Dancing Script', cursive;
 
     font-size: 30px;
 
@@ -620,7 +604,7 @@ section {
 
 
 /* =====================================================
-   VIDEO
+   VIDEO 9:16
 ===================================================== */
 
 .video-wrapper {
@@ -629,49 +613,182 @@ section {
 
     margin: auto;
 
-    padding: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: relative;
+
+    padding: 45px 35px;
 
     background:
+        radial-gradient(
+            circle at 20% 20%,
+            rgba(255,255,255,.9) 0 3px,
+            transparent 4px
+        ),
+
+        radial-gradient(
+            circle at 80% 70%,
+            rgba(255,255,255,.8) 0 3px,
+            transparent 4px
+        ),
+
         linear-gradient(
             135deg,
-            #f2c0d2,
-            #fff,
-            #e7a4bd
+            #ffd6e7,
+            #ffeaf3,
+            #f8bfd6
         );
 
-    border-radius: 30px;
+    border-radius: 40px;
+
+    border:
+        3px solid #f3a7c5;
 
     box-shadow:
         0 20px 50px
-        rgba(130,50,80,.2);
+        rgba(190,80,125,.20),
+
+        inset 0 0 25px
+        rgba(255,255,255,.8);
 }
 
 .video-frame {
-    width: 100%;
+    position: relative;
 
-    background: #321e28;
+    width:
+        min(360px, 100%);
+
+    aspect-ratio: 9 / 16;
 
     padding: 10px;
 
-    border-radius: 20px;
+    background:
+        linear-gradient(
+            145deg,
+            #ffffff,
+            #ffd9e8
+        );
+
+    border:
+        5px solid #ef9fbe;
+
+    border-radius: 32px;
+
+    box-shadow:
+        0 12px 30px
+        rgba(160,60,100,.25),
+
+        0 0 0 8px
+        rgba(255,255,255,.65);
+
+    overflow: visible;
 }
 
 .video-frame video {
     display: block;
 
     width: 100%;
-    max-width: 100%;
+    height: 100%;
 
-    max-height: 600px;
+    aspect-ratio: 9 / 16;
 
-    border-radius: 13px;
+    object-fit: cover;
 
-    background: #000;
+    border-radius: 22px;
+
+    background: #f8dce8;
+}
+
+.video-frame::before {
+    content: "🎀";
+
+    position: absolute;
+
+    top: -35px;
+    right: -27px;
+
+    font-size: 52px;
+
+    z-index: 10;
+
+    transform: rotate(12deg);
+
+    animation:
+        cuteFloat 3s ease-in-out infinite;
+}
+
+.video-frame::after {
+    content: "💕";
+
+    position: absolute;
+
+    bottom: -25px;
+    left: -27px;
+
+    font-size: 38px;
+
+    z-index: 10;
+
+    animation:
+        cuteFloat 3s ease-in-out infinite reverse;
+}
+
+.video-wrapper::before {
+    content: "🌸  ✨  ♡  ✨  🌸";
+
+    position: absolute;
+
+    top: -25px;
+    left: 50%;
+
+    transform:
+        translateX(-50%);
+
+    white-space: nowrap;
+
+    font-size: 22px;
+
+    letter-spacing: 8px;
+
+    z-index: 5;
+}
+
+.video-wrapper::after {
+    content: "♡  🎀  ♡";
+
+    position: absolute;
+
+    bottom: -28px;
+    right: 25px;
+
+    font-size: 24px;
+
+    letter-spacing: 6px;
+
+    z-index: 5;
+}
+
+@keyframes cuteFloat {
+
+    0%,100% {
+        transform:
+            translateY(0)
+            rotate(10deg);
+    }
+
+    50% {
+        transform:
+            translateY(-8px)
+            rotate(-5deg);
+    }
+
 }
 
 
 /* =====================================================
-   FINAL MESSAGE
+   FINAL
 ===================================================== */
 
 .final {
@@ -703,9 +820,7 @@ section {
 }
 
 .final-box h2 {
-    font-family:
-        'Dancing Script',
-        cursive;
+    font-family: 'Dancing Script', cursive;
 
     font-size: 65px;
 
@@ -724,8 +839,7 @@ section {
     font-size: 65px;
 
     animation:
-        heartbeat 1.4s
-        infinite;
+        heartbeat 1.4s infinite;
 }
 
 @keyframes heartbeat {
@@ -783,6 +897,51 @@ section {
 
 
 /* =====================================================
+   MUSIC STATUS
+===================================================== */
+
+.music-status {
+    position: fixed;
+
+    bottom: 92px;
+    right: 20px;
+
+    z-index: 9999;
+
+    padding: 8px 14px;
+
+    background:
+        rgba(255,255,255,.9);
+
+    color: #b54f77;
+
+    font-size: 11px;
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 5px 20px
+        rgba(120,50,80,.15);
+
+    opacity: 0;
+
+    transform:
+        translateY(10px);
+
+    transition: .3s;
+
+    pointer-events: none;
+}
+
+.music-status.show {
+    opacity: 1;
+
+    transform:
+        translateY(0);
+}
+
+
+/* =====================================================
    CONFETTI
 ===================================================== */
 
@@ -818,7 +977,7 @@ section {
 
 
 /* =====================================================
-   SCROLL REVEAL
+   SCROLL
 ===================================================== */
 
 .reveal {
@@ -854,8 +1013,7 @@ section {
     font-size: 22px;
 
     animation:
-        clickHeart 1s
-        ease forwards;
+        clickHeart 1s ease forwards;
 }
 
 @keyframes clickHeart {
@@ -898,8 +1056,7 @@ section {
     }
 
     .memories {
-        grid-template-columns:
-            1fr;
+        grid-template-columns: 1fr;
     }
 
     .royal-letter {
@@ -932,23 +1089,13 @@ section {
     }
 
     section {
-        padding:
-            60px 15px;
+        padding: 60px 15px;
     }
-
-    /* HERO */
 
     .hero {
         width: 100%;
-        max-width: 100%;
 
-        padding:
-            35px 15px;
-    }
-
-    .hero-content {
-        width: 100%;
-        max-width: 100%;
+        padding: 35px 15px;
     }
 
     .small-title {
@@ -975,13 +1122,6 @@ section {
         line-height: 1.7;
     }
 
-
-    /* SECTION TITLE */
-
-    .section-title {
-        margin-bottom: 35px;
-    }
-
     .section-title h2 {
         font-size: 43px;
 
@@ -992,44 +1132,22 @@ section {
         font-size: 13px;
     }
 
-
-    /* GALERI HP */
-
     .gallery {
         width: 100%;
-        max-width: 100%;
 
         grid-template-columns: 1fr;
 
         gap: 28px;
-
-        padding: 0;
     }
 
     .photo-card {
         width: 100%;
-        max-width: 100%;
-
-        margin: 0;
 
         transform: none !important;
     }
 
-    .photo-card:hover {
-        transform:
-            translateY(-5px)
-            scale(1.01) !important;
-    }
-
     .photo-card img {
         width: 100%;
-        max-width: 100%;
-
-        aspect-ratio: 1 / 1.15;
-    }
-
-    .photo-caption {
-        font-size: 24px;
     }
 
     .party-hat {
@@ -1039,17 +1157,8 @@ section {
         font-size: 38px;
     }
 
-
-    /* SURAT */
-
-    .letter-container {
-        width: 100%;
-        max-width: 100%;
-    }
-
     .royal-letter {
         width: 100%;
-        max-width: 100%;
 
         padding:
             45px 22px;
@@ -1080,56 +1189,71 @@ section {
     }
 
 
-    /* MEMORY */
+    /* VIDEO */
+
+    .video-wrapper {
+        width: 100%;
+
+        padding:
+            38px 18px;
+
+        border-radius: 30px;
+    }
+
+    .video-frame {
+        width:
+            min(300px, 100%);
+
+        aspect-ratio: 9 / 16;
+
+        border-radius: 28px;
+    }
+
+    .video-frame video {
+        width: 100%;
+        height: 100%;
+
+        aspect-ratio: 9 / 16;
+
+        border-radius: 20px;
+    }
+
+    .video-frame::before {
+        font-size: 43px;
+
+        top: -30px;
+        right: -20px;
+    }
+
+    .video-frame::after {
+        font-size: 32px;
+
+        bottom: -20px;
+        left: -20px;
+    }
+
+    .video-wrapper::before {
+        font-size: 17px;
+
+        letter-spacing: 4px;
+    }
+
+    .video-wrapper::after {
+        font-size: 18px;
+
+        letter-spacing: 4px;
+    }
 
     .memories {
         width: 100%;
-        max-width: 100%;
 
         grid-template-columns: 1fr;
 
         gap: 18px;
     }
 
-    .memory {
-        width: 100%;
-    }
-
-
-    /* VIDEO */
-
-    .video-wrapper {
-        width: 100%;
-        max-width: 100%;
-
-        padding: 9px;
-
-        border-radius: 20px;
-    }
-
-    .video-frame {
-        padding: 6px;
-
-        border-radius: 14px;
-    }
-
-    .video-frame video {
-        width: 100%;
-        max-width: 100%;
-
-        border-radius: 9px;
-    }
-
-
-    /* FINAL */
-
-    .final {
-        padding-bottom: 100px;
-    }
-
     .final-box {
         width: 100%;
-        max-width: 100%;
 
         padding:
             45px 20px;
@@ -1146,9 +1270,6 @@ section {
 
         line-height: 1.8;
     }
-
-
-    /* MUSIC */
 
     .music-btn {
         width: 52px;
@@ -1168,26 +1289,30 @@ section {
 
 
 <!-- =====================================================
-     FLOATING ORNAMENTS
+     ORNAMEN
 ===================================================== -->
 
-<div class="floating heart"
-     style="left:5%;top:20%;">
+<div
+    class="floating heart"
+    style="left:5%;top:20%;">
     ♥
 </div>
 
-<div class="floating flower"
-     style="left:12%;top:70%;">
+<div
+    class="floating flower"
+    style="left:12%;top:70%;">
     ✿
 </div>
 
-<div class="floating heart"
-     style="right:8%;top:30%;">
+<div
+    class="floating heart"
+    style="right:8%;top:30%;">
     ♡
 </div>
 
-<div class="floating flower"
-     style="right:15%;top:75%;">
+<div
+    class="floating flower"
+    style="right:15%;top:75%;">
     ✿
 </div>
 
@@ -1214,11 +1339,11 @@ section {
         </div>
 
         <h1>
-            Sweet Seventeen
+            Amelia Wanda Nur'iza
         </h1>
 
         <h2>
-            Sayangg 💕
+            Sweet Seventeen Sayanggkuu 💕
         </h2>
 
         <p>
@@ -1230,9 +1355,13 @@ section {
             menunggu di depan.
         </p>
 
-        <a href="#letter"
-           class="start-btn">
+        <a
+            href="#letter"
+            class="start-btn"
+            id="startBtn">
+
             💌 Buka Surat Untukmu
+
         </a>
 
     </div>
@@ -1241,7 +1370,7 @@ section {
 
 
 <!-- =====================================================
-     SURAT KERAJAAN
+     SURAT
 ===================================================== -->
 
 <section id="letter">
@@ -1321,7 +1450,7 @@ section {
 
 
 <!-- =====================================================
-     GALERI
+     FOTO
 ===================================================== -->
 
 <section>
@@ -1348,8 +1477,9 @@ section {
                 🎉
             </div>
 
-            <img src="foto1.jpg"
-                 alt="Foto 1">
+            <img
+                src="foto1.jpg"
+                alt="Foto 1">
 
             <div class="photo-caption">
                 Beautiful Moment ✨
@@ -1364,8 +1494,9 @@ section {
                 🎂
             </div>
 
-            <img src="foto2.jpg"
-                 alt="Foto 2">
+            <img
+                src="foto2.jpg"
+                alt="Foto 2">
 
             <div class="photo-caption">
                 Sweet Memory 💕
@@ -1380,8 +1511,9 @@ section {
                 🎀
             </div>
 
-            <img src="foto3.jpg"
-                 alt="Foto 3">
+            <img
+                src="foto3.jpg"
+                alt="Foto 3">
 
             <div class="photo-caption">
                 A Beautiful Day 🌸
@@ -1396,8 +1528,9 @@ section {
                 🎈
             </div>
 
-            <img src="foto4.jpg"
-                 alt="Foto 4">
+            <img
+                src="foto4.jpeg"
+                alt="Foto 4">
 
             <div class="photo-caption">
                 Precious Moment 💗
@@ -1412,8 +1545,9 @@ section {
                 🎂
             </div>
 
-            <img src="foto5.jpg"
-                 alt="Foto 5">
+            <img
+                src="foto5.jpeg"
+                alt="Foto 5">
 
             <div class="photo-caption">
                 Always Smile 😊
@@ -1428,8 +1562,9 @@ section {
                 🎉
             </div>
 
-            <img src="foto6.jpg"
-                 alt="Foto 6">
+            <img
+                src="foto6.jpeg"
+                alt="Foto 6">
 
             <div class="photo-caption">
                 Another Story 🌷
@@ -1444,8 +1579,9 @@ section {
                 🎀
             </div>
 
-            <img src="foto7.jpg"
-                 alt="Foto 7">
+            <img
+                src="foto7.jpeg"
+                alt="Foto 7">
 
             <div class="photo-caption">
                 Sweet Smile 💕
@@ -1460,8 +1596,9 @@ section {
                 👑
             </div>
 
-            <img src="foto8.jpg"
-                 alt="Foto 8">
+            <img
+                src="foto8.jpeg"
+                alt="Foto 8">
 
             <div class="photo-caption">
                 My Favorite Memory ✨
@@ -1572,7 +1709,7 @@ section {
         </h2>
 
         <p>
-            Sebuah video untuk mengabadikan momen spesial
+            Sebuah video kecil untuk momen spesial 💕
         </p>
 
     </div>
@@ -1583,8 +1720,11 @@ section {
         <div class="video-frame">
 
             <video
+                id="birthdayVideo"
                 controls
-                poster="poster.jpg">
+                poster="poster.jpg"
+                playsinline
+                preload="metadata">
 
                 <source
                     src="video.mp4"
@@ -1645,126 +1785,353 @@ section {
 
 
 <!-- =====================================================
-     MUSIC
+     AUDIO
 ===================================================== -->
 
-<audio id="music"
-       loop
-       preload="auto">
+<audio
+    id="music"
+    loop
+    preload="auto">
 
     <source
-        src="tunggaleka.mp3"
+        src="music.mp3"
         type="audio/mpeg">
 
 </audio>
 
 
+<!-- MUSIC BUTTON -->
+
 <button
     class="music-btn"
     id="musicBtn"
-    onclick="toggleMusic()">
+    type="button">
 
     🎵
 
 </button>
 
 
+<div
+    class="music-status"
+    id="musicStatus">
+
+    🎵 Musik berjalan
+
+</div>
+
+
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
+
 <script>
 
+
 /* =====================================================
-   MUSIC
+   AUDIO SETTINGS
 ===================================================== */
 
 const music =
     document.getElementById("music");
 
+const video =
+    document.getElementById("birthdayVideo");
+
 const musicBtn =
     document.getElementById("musicBtn");
 
+const musicStatus =
+    document.getElementById("musicStatus");
+
 
 /*
-   Mencoba autoplay ketika index.html dibuka.
+   VOLUME NORMAL
 */
 
-window.addEventListener("load", async () => {
+const NORMAL_VOLUME = 0.70;
+
+
+/*
+   VOLUME SAAT VIDEO BERJALAN
+
+   0.10 = 10%
+*/
+
+const VIDEO_VOLUME = 0.10;
+
+
+/*
+   SET VOLUME AWAL
+*/
+
+music.volume = NORMAL_VOLUME;
+
+
+/* =====================================================
+   PLAY MUSIC
+===================================================== */
+
+async function playMusic() {
 
     try {
 
-        music.volume = 0.7;
+        music.volume = NORMAL_VOLUME;
 
         await music.play();
 
         musicBtn.innerHTML = "🔊";
 
-    }
+        showMusicStatus(
+            "🎵 Musik berjalan"
+        );
 
-    catch(error) {
+    } catch(error) {
+
+        /*
+           Browser memblokir autoplay.
+
+           Musik akan dimainkan ketika
+           user melakukan tap pertama.
+        */
 
         musicBtn.innerHTML = "🎵";
 
     }
 
-});
+}
+
+
+/* =====================================================
+   AUTOPLAY SAAT LOAD
+===================================================== */
+
+window.addEventListener(
+    "load",
+    () => {
+
+        playMusic();
+
+    }
+);
+
+
+/* =====================================================
+   FALLBACK AUTOPLAY
+===================================================== */
+
+function firstInteraction() {
+
+    if (music.paused) {
+
+        playMusic();
+
+    }
+
+}
 
 
 /*
-   Jika autoplay diblokir browser,
-   klik pertama pada halaman akan
-   menjalankan musik.
+   Tap / click / touch pertama
 */
 
 document.addEventListener(
     "click",
+    firstInteraction,
+    {
+        once: true
+    }
+);
 
-    function startMusic() {
+document.addEventListener(
+    "touchstart",
+    firstInteraction,
+    {
+        once: true,
+        passive: true
+    }
+);
+
+
+/* =====================================================
+   MUSIC BUTTON
+===================================================== */
+
+musicBtn.addEventListener(
+    "click",
+    function(e) {
+
+        e.stopPropagation();
 
         if (music.paused) {
 
-            music.volume = 0.7;
+            playMusic();
+
+        } else {
+
+            music.pause();
+
+            musicBtn.innerHTML = "🎵";
+
+            showMusicStatus(
+                "🔇 Musik dimatikan"
+            );
+
+        }
+
+    }
+);
+
+
+/* =====================================================
+   VIDEO PLAY
+===================================================== */
+
+video.addEventListener(
+    "play",
+    function() {
+
+        /*
+           Video mulai.
+
+           Musik diperkecil menjadi 10%.
+        */
+
+        music.volume = VIDEO_VOLUME;
+
+        showMusicStatus(
+            "🎬 Video diputar • Musik diperkecil"
+        );
+
+    }
+);
+
+
+/* =====================================================
+   VIDEO PAUSE
+===================================================== */
+
+video.addEventListener(
+    "pause",
+    function() {
+
+        /*
+           Kalau video dipause,
+           musik kembali normal.
+        */
+
+        music.volume = NORMAL_VOLUME;
+
+        /*
+           Kalau musik sebelumnya sedang
+           berjalan, lanjutkan.
+
+           Jika user memang mematikan musik,
+           jangan paksa menyala.
+        */
+
+        if (musicWasPlaying) {
 
             music.play()
-                .then(() => {
-
-                    musicBtn.innerHTML = "🔊";
-
-                })
                 .catch(() => {});
 
         }
 
-        document.removeEventListener(
-            "click",
-            startMusic
+        showMusicStatus(
+            "🎵 Musik kembali normal"
         );
 
-    },
-
-    { once: true }
+    }
 );
 
 
-/*
-   Tombol musik manual.
-*/
+/* =====================================================
+   VIDEO SELESAI
+===================================================== */
 
-function toggleMusic() {
+video.addEventListener(
+    "ended",
+    function() {
 
-    if (music.paused) {
+        /*
+           Video selesai.
+
+           Kembalikan musik ke volume normal.
+        */
+
+        music.volume = NORMAL_VOLUME;
+
+        /*
+           Pastikan musik kembali berjalan.
+        */
 
         music.play()
             .then(() => {
 
                 musicBtn.innerHTML = "🔊";
 
-            });
+            })
+            .catch(() => {});
 
-    } else {
 
-        music.pause();
-
-        musicBtn.innerHTML = "🎵";
+        showMusicStatus(
+            "💕 Video selesai • Musik kembali"
+        );
 
     }
+);
+
+
+/* =====================================================
+   CEK MUSIK SEBELUM VIDEO
+===================================================== */
+
+let musicWasPlaying = false;
+
+video.addEventListener(
+    "play",
+    function() {
+
+        /*
+           Simpan apakah MP3 sedang berjalan
+           sebelum video dimainkan.
+        */
+
+        musicWasPlaying =
+            !music.paused;
+
+    },
+    {
+        once: false
+    }
+);
+
+
+/* =====================================================
+   STATUS MUSIC
+===================================================== */
+
+let statusTimer;
+
+function showMusicStatus(text) {
+
+    musicStatus.textContent = text;
+
+    musicStatus.classList.add("show");
+
+    clearTimeout(statusTimer);
+
+    statusTimer =
+        setTimeout(
+            () => {
+
+                musicStatus.classList.remove(
+                    "show"
+                );
+
+            },
+            2200
+        );
 
 }
 
@@ -1802,10 +2169,14 @@ function createConfetti() {
         Math.random() * 100 + "vw";
 
     confetti.style.fontSize =
-        (Math.random() * 12 + 8) + "px";
+        (
+            Math.random() * 12 + 8
+        ) + "px";
 
     confetti.style.animationDuration =
-        (Math.random() * 3 + 3) + "s";
+        (
+            Math.random() * 3 + 3
+        ) + "s";
 
     confetti.style.color =
         "#d96691";
@@ -1814,11 +2185,14 @@ function createConfetti() {
         confetti
     );
 
-    setTimeout(() => {
+    setTimeout(
+        () => {
 
-        confetti.remove();
+            confetti.remove();
 
-    }, 6000);
+        },
+        6000
+    );
 
 }
 
@@ -1837,19 +2211,21 @@ const observer =
 
         entries => {
 
-            entries.forEach(entry => {
+            entries.forEach(
+                entry => {
 
-                if (
-                    entry.isIntersecting
-                ) {
+                    if (
+                        entry.isIntersecting
+                    ) {
 
-                    entry.target.classList.add(
-                        "show"
-                    );
+                        entry.target
+                            .classList
+                            .add("show");
+
+                    }
 
                 }
-
-            });
+            );
 
         },
 
@@ -1862,11 +2238,15 @@ const observer =
 
 document
     .querySelectorAll(".reveal")
-    .forEach(element => {
+    .forEach(
+        element => {
 
-        observer.observe(element);
+            observer.observe(
+                element
+            );
 
-    });
+        }
+    );
 
 
 /* =====================================================
@@ -1875,11 +2255,23 @@ document
 
 document.addEventListener(
     "click",
-
     function(e) {
 
+        /*
+           Jangan membuat heart ketika
+           tombol musik ditekan.
+        */
+
+        if (
+            e.target === musicBtn
+        ) {
+            return;
+        }
+
         const heart =
-            document.createElement("div");
+            document.createElement(
+                "div"
+            );
 
         heart.innerHTML = "💗";
 
@@ -1897,15 +2289,40 @@ document.addEventListener(
             heart
         );
 
-        setTimeout(() => {
+        setTimeout(
+            () => {
 
-            heart.remove();
+                heart.remove();
 
-        }, 1000);
+            },
+            1000
+        );
 
     }
-
 );
+
+
+/* =====================================================
+   START BUTTON
+===================================================== */
+
+document
+    .getElementById("startBtn")
+    .addEventListener(
+        "click",
+        function() {
+
+            /*
+               Tap tombol juga menjadi
+               user interaction sehingga
+               browser mengizinkan audio.
+            */
+
+            playMusic();
+
+        }
+    );
+
 
 </script>
 
