@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -25,39 +26,22 @@ body {
     overflow-x: hidden;
 }
 
-/* =========================
-   COUNTDOWN LOCK SCREEN
-========================= */
-
 #lockScreen {
     position: fixed;
     inset: 0;
     z-index: 999999;
     width: 100vw;
     height: 100vh;
-
     display: flex;
     justify-content: center;
     align-items: center;
-
     overflow: hidden;
     padding: 25px;
-
     background:
-        radial-gradient(circle at 20% 20%,
-            rgba(255,255,255,.85),
-            transparent 25%),
-        radial-gradient(circle at 80% 80%,
-            rgba(255,180,215,.5),
-            transparent 30%),
-        linear-gradient(135deg,
-            #ffeaf3,
-            #ffd5e6,
-            #fff0f6);
-
-    transition:
-        opacity .8s ease,
-        visibility .8s ease;
+        radial-gradient(circle at 20% 20%, rgba(255,255,255,.85), transparent 25%),
+        radial-gradient(circle at 80% 80%, rgba(255,180,215,.5), transparent 30%),
+        linear-gradient(135deg, #ffeaf3, #ffd5e6, #fff0f6);
+    transition: opacity .8s ease, visibility .8s ease;
 }
 
 #lockScreen.hidden {
@@ -70,17 +54,12 @@ body {
     position: relative;
     width: min(650px, 100%);
     padding: 40px 25px;
-
     text-align: center;
-
     background: rgba(255,255,255,.78);
     border: 2px solid rgba(255,255,255,.9);
     border-radius: 35px;
-
-    box-shadow:
-        0 25px 70px rgba(150,65,105,.2),
-        inset 0 0 30px rgba(255,255,255,.6);
-
+    box-shadow: 0 25px 70px rgba(150,65,105,.2),
+                inset 0 0 30px rgba(255,255,255,.6);
     backdrop-filter: blur(12px);
 }
 
@@ -91,13 +70,8 @@ body {
 }
 
 @keyframes crownFloat {
-    0%,100% {
-        transform: translateY(0) rotate(-3deg);
-    }
-
-    50% {
-        transform: translateY(-10px) rotate(3deg);
-    }
+    0%,100% { transform: translateY(0) rotate(-3deg); }
+    50% { transform: translateY(-10px) rotate(3deg); }
 }
 
 .countdown-title {
@@ -129,19 +103,9 @@ body {
 
 .time-box {
     padding: 18px 8px;
-
     border-radius: 20px;
-
-    background:
-        linear-gradient(
-            145deg,
-            rgba(255,255,255,.95),
-            rgba(255,220,235,.85)
-        );
-
-    box-shadow:
-        0 8px 20px rgba(180,75,120,.12);
-
+    background: linear-gradient(145deg, rgba(255,255,255,.95), rgba(255,220,235,.85));
+    box-shadow: 0 8px 20px rgba(180,75,120,.12);
     border: 1px solid rgba(255,255,255,.9);
 }
 
@@ -199,18 +163,11 @@ body {
 }
 
 @keyframes decorationFloat {
-    0%,100% {
-        transform: translateY(0) rotate(0);
-    }
-
-    50% {
-        transform: translateY(-18px) rotate(10deg);
-    }
+    0%,100% { transform: translateY(0) rotate(0); }
+    50% { transform: translateY(-18px) rotate(10deg); }
 }
 
-/* =========================
-   MAIN PAGE
-========================= */
+/* MAIN PAGE */
 
 .page {
     min-height: 100vh;
@@ -223,7 +180,7 @@ section {
     margin: auto;
 }
 
-/* floating decorations */
+/* FLOATING DECORATIONS */
 
 .float {
     position: fixed;
@@ -261,18 +218,11 @@ section {
 }
 
 @keyframes floatAround {
-    0%,100% {
-        transform: translateY(0) rotate(0);
-    }
-
-    50% {
-        transform: translateY(-25px) rotate(10deg);
-    }
+    0%,100% { transform: translateY(0) rotate(0); }
+    50% { transform: translateY(-25px) rotate(10deg); }
 }
 
-/* =========================
-   HERO
-========================= */
+/* HERO */
 
 .hero {
     min-height: 100vh;
@@ -286,21 +236,10 @@ section {
 .hero-card {
     width: min(850px, 100%);
     padding: 55px 25px;
-
     border-radius: 45px;
-
-    background:
-        linear-gradient(
-            145deg,
-            rgba(255,255,255,.82),
-            rgba(255,225,238,.72)
-        );
-
+    background: linear-gradient(145deg, rgba(255,255,255,.82), rgba(255,225,238,.72));
     border: 2px solid rgba(255,255,255,.9);
-
-    box-shadow:
-        0 30px 80px rgba(160,65,105,.18);
-
+    box-shadow: 0 30px 80px rgba(160,65,105,.18);
     backdrop-filter: blur(12px);
 }
 
@@ -348,18 +287,11 @@ section {
 }
 
 @keyframes bounce {
-    0%,100% {
-        transform: translateY(0);
-    }
-
-    50% {
-        transform: translateY(8px);
-    }
+    0%,100% { transform: translateY(0); }
+    50% { transform: translateY(8px); }
 }
 
-/* =========================
-   ROYAL LETTER
-========================= */
+/* ROYAL LETTER */
 
 .letter-section {
     padding: 80px 0;
@@ -368,20 +300,11 @@ section {
 .letter {
     position: relative;
     padding: 55px 45px;
-
-    background:
-        linear-gradient(
-            rgba(255,249,244,.96),
-            rgba(255,239,226,.96)
-        );
-
+    background: linear-gradient(rgba(255,249,244,.96), rgba(255,239,226,.96));
     border: 5px solid #e7bd87;
     border-radius: 8px;
-
-    box-shadow:
-        0 20px 45px rgba(110,65,35,.16),
-        inset 0 0 30px rgba(195,145,80,.12);
-
+    box-shadow: 0 20px 45px rgba(110,65,35,.16),
+                inset 0 0 30px rgba(195,145,80,.12);
     transform: rotate(-.5deg);
 }
 
@@ -416,9 +339,7 @@ section {
     font-style: italic;
 }
 
-/* =========================
-   SECTION TITLE
-========================= */
+/* SECTION TITLE */
 
 .section-title {
     text-align: center;
@@ -440,9 +361,7 @@ section {
     font-size: clamp(30px, 7vw, 52px);
 }
 
-/* =========================
-   GALLERY
-========================= */
+/* GALLERY */
 
 .gallery {
     display: grid;
@@ -454,13 +373,9 @@ section {
 .photo-card {
     position: relative;
     padding: 10px;
-
     background: #fff;
     border-radius: 8px;
-
-    box-shadow:
-        0 15px 30px rgba(120,50,80,.16);
-
+    box-shadow: 0 15px 30px rgba(120,50,80,.16);
     transition: .4s ease;
 }
 
@@ -500,9 +415,7 @@ section {
     color: #9a5875;
 }
 
-/* =========================
-   LITTLE THINGS
-========================= */
+/* LITTLE THINGS */
 
 .little-things {
     display: grid;
@@ -514,13 +427,10 @@ section {
 .thing {
     padding: 30px 22px;
     text-align: center;
-
     background: rgba(255,255,255,.7);
     border: 1px solid rgba(255,255,255,.8);
     border-radius: 25px;
-
     box-shadow: 0 12px 30px rgba(150,60,100,.1);
-
     transition: .3s;
 }
 
@@ -545,12 +455,10 @@ section {
     line-height: 1.6;
 }
 
-/* =========================
-   VIDEO
-========================= */
+/* VIDEO */
 
 .video-section {
-    padding: 60px 0 90px;
+    padding: 60px 0 45px;
     text-align: center;
 }
 
@@ -558,12 +466,9 @@ section {
     width: min(390px, 90vw);
     margin: auto;
     padding: 10px;
-
     background: #fff;
     border-radius: 25px;
-
-    box-shadow:
-        0 20px 50px rgba(130,55,90,.2);
+    box-shadow: 0 20px 50px rgba(130,55,90,.2);
 }
 
 .video-wrapper video {
@@ -582,9 +487,74 @@ section {
     color: #936079;
 }
 
-/* =========================
-   FINAL MESSAGE
-========================= */
+/* REASON SECTION - SCREENSHOT */
+
+.reason-section {
+    padding: 35px 0 90px;
+    text-align: center;
+}
+
+.reason-title {
+    color: #a4426e;
+    font-size: clamp(25px, 6vw, 38px);
+    margin-bottom: 12px;
+}
+
+.reason-subtitle {
+    font-family: Arial, sans-serif;
+    color: #936079;
+    font-size: 14px;
+    line-height: 1.7;
+    margin-bottom: 35px;
+}
+
+.request-frame {
+    position: relative;
+    width: min(550px, 92%);
+    margin: auto;
+    padding: 15px;
+    background: linear-gradient(145deg, #fff, #ffe4ef);
+    border: 3px solid #efb5ce;
+    border-radius: 25px;
+    box-shadow: 0 15px 40px rgba(150,60,100,.17),
+                inset 0 0 15px rgba(255,255,255,.8);
+}
+
+.request-frame::before {
+    content: "🎀";
+    position: absolute;
+    top: -28px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 38px;
+    z-index: 2;
+}
+
+.request-frame img {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-height: 650px;
+    object-fit: contain;
+    background: #fff;
+    border-radius: 15px;
+    border: 1px solid #f3c7d9;
+}
+
+.request-caption {
+    margin-top: 18px;
+    font-family: Arial, sans-serif;
+    color: #a34c73;
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+.request-heart {
+    margin-top: 15px;
+    font-size: 25px;
+}
+
+/* FINAL MESSAGE */
 
 .final-section {
     padding: 60px 0 120px;
@@ -593,18 +563,9 @@ section {
 .final-card {
     text-align: center;
     padding: 60px 25px;
-
-    background:
-        linear-gradient(
-            145deg,
-            rgba(255,255,255,.85),
-            rgba(255,220,235,.8)
-        );
-
+    background: linear-gradient(145deg, rgba(255,255,255,.85), rgba(255,220,235,.8));
     border-radius: 40px;
-
-    box-shadow:
-        0 25px 60px rgba(140,55,95,.15);
+    box-shadow: 0 25px 60px rgba(140,55,95,.15);
 }
 
 .final-card .big-heart {
@@ -613,13 +574,8 @@ section {
 }
 
 @keyframes heartBeat {
-    0%,100% {
-        transform: scale(1);
-    }
-
-    50% {
-        transform: scale(1.15);
-    }
+    0%,100% { transform: scale(1); }
+    50% { transform: scale(1.15); }
 }
 
 .final-card h2 {
@@ -636,31 +592,22 @@ section {
     color: #7e536a;
 }
 
-/* =========================
-   MUSIC BUTTON
-========================= */
+/* MUSIC BUTTON */
 
 .music-control {
     position: fixed;
     right: 18px;
     bottom: 18px;
-
     z-index: 9999;
-
     display: flex;
     align-items: center;
     gap: 8px;
-
     padding: 12px 16px;
-
     border: none;
     border-radius: 999px;
-
     background: rgba(255,255,255,.9);
     color: #a13f6c;
-
     box-shadow: 0 8px 25px rgba(100,40,70,.2);
-
     cursor: pointer;
     font-weight: bold;
 }
@@ -673,9 +620,7 @@ section {
     font-size: 11px;
 }
 
-/* =========================
-   CONFETTI
-========================= */
+/* CONFETTI */
 
 .confetti {
     position: fixed;
@@ -687,23 +632,18 @@ section {
 
 @keyframes fall {
     to {
-        transform:
-            translateY(110vh)
-            rotate(720deg);
+        transform: translateY(110vh) rotate(720deg);
         opacity: 0;
     }
 }
 
-/* =========================
-   HEART CLICK
-========================= */
+/* HEART CLICK */
 
 .click-heart {
     position: fixed;
     z-index: 10001;
     pointer-events: none;
     font-size: 22px;
-
     animation: heartPop 1.2s ease forwards;
 }
 
@@ -712,18 +652,13 @@ section {
         opacity: 1;
         transform: translate(-50%, -50%) scale(.5);
     }
-
     100% {
         opacity: 0;
-        transform:
-            translate(-50%, -150px)
-            scale(1.4);
+        transform: translate(-50%, -150px) scale(1.4);
     }
 }
 
-/* =========================
-   SCROLL REVEAL
-========================= */
+/* SCROLL REVEAL */
 
 .reveal {
     opacity: 0;
@@ -736,12 +671,9 @@ section {
     transform: translateY(0);
 }
 
-/* =========================
-   MOBILE
-========================= */
+/* MOBILE */
 
 @media (max-width: 800px) {
-
     .gallery {
         grid-template-columns: repeat(2, 1fr);
         gap: 18px;
@@ -757,7 +689,6 @@ section {
 }
 
 @media (max-width: 600px) {
-
     .countdown-box {
         padding: 30px 15px;
         border-radius: 28px;
@@ -828,15 +759,21 @@ section {
     .music-status {
         display: none;
     }
+
+    .reason-section {
+        padding: 25px 0 65px;
+    }
+
+    .request-frame {
+        padding: 10px;
+    }
 }
 </style>
 </head>
 
 <body>
 
-<!-- =========================
-     LOCK SCREEN
-========================= -->
+<!-- LOCK SCREEN -->
 
 <div id="lockScreen">
 
@@ -899,9 +836,7 @@ section {
 <div class="float four">🎀</div>
 
 
-<!-- =========================
-     MAIN PAGE
-========================= -->
+<!-- MAIN PAGE -->
 
 <main class="page">
 
@@ -917,13 +852,9 @@ section {
                 A VERY SPECIAL DAY
             </div>
 
-            <h1>
-                Sweet Seventeen
-            </h1>
+            <h1>Sweet Seventeen</h1>
 
-            <h2>
-                Sayangg 💗
-            </h2>
+            <h2>Sayangg 💗</h2>
 
             <p class="hero-text">
                 Hari ini bukan cuma tentang bertambahnya usia,
@@ -932,7 +863,7 @@ section {
             </p>
 
             <div class="scroll-hint">
-                ↓ scroll perlahan ya ↓
+                ↓ scroll perlahan ya sayangg ↓
             </div>
 
         </div>
@@ -940,9 +871,7 @@ section {
     </section>
 
 
-    <!-- =========================
-         ROYAL LETTER
-    ========================= -->
+    <!-- ROYAL LETTER -->
 
     <section class="letter-section">
 
@@ -956,7 +885,7 @@ section {
             </p>
 
             <p>
-                Selamat ulang tahun yang ke-17.
+                Selamat ulang tahun yang ke-17, Sayangg.
                 Semoga di usia baru ini semakin banyak
                 hal baik yang datang, semakin banyak alasan
                 untuk tersenyum, dan semakin banyak impian
@@ -967,14 +896,14 @@ section {
                 Jangan takut dengan perjalanan yang masih panjang.
                 Tidak semua hal harus langsung sempurna.
                 Nikmati setiap prosesnya, simpan setiap kenangan,
-                dan terus jadi versi terbaik dari diri sendiri.
+                dan terus jadi versi terbaik dari diri sendiri yaa.
             </p>
 
             <p>
                 Semoga hari ini menjadi salah satu hari
                 yang selalu menyenangkan untuk diingat.
                 Semoga semua doa baik menemukan jalannya
-                menuju kamu.
+                menuju kamu yaa sayangg.
             </p>
 
             <p>
@@ -991,9 +920,7 @@ section {
     </section>
 
 
-    <!-- =========================
-         GALLERY
-    ========================= -->
+    <!-- GALLERY -->
 
     <section>
 
@@ -1007,65 +934,49 @@ section {
             <div class="photo-card reveal">
                 <div class="party-hat">🥳</div>
                 <img src="foto1.jpg" alt="Memory 1">
-                <div class="photo-caption">
-                    One beautiful moment 💗
-                </div>
+                <div class="photo-caption">One beautiful moment 💗</div>
             </div>
 
             <div class="photo-card reveal">
                 <div class="party-hat">🎉</div>
                 <img src="foto2.jpg" alt="Memory 2">
-                <div class="photo-caption">
-                    Keep this memory ✨
-                </div>
+                <div class="photo-caption">Keep this memory ✨</div>
             </div>
 
             <div class="photo-card reveal">
                 <div class="party-hat">🎀</div>
                 <img src="foto3.jpg" alt="Memory 3">
-                <div class="photo-caption">
-                    A little happiness 🌸
-                </div>
+                <div class="photo-caption">A little happiness 🌸</div>
             </div>
 
             <div class="photo-card reveal">
                 <div class="party-hat">👑</div>
-                <img src="foto4.jpg" alt="Memory 4">
-                <div class="photo-caption">
-                    Our favorite moment 💕
-                </div>
+                <img src="foto4.jpeg" alt="Memory 4">
+                <div class="photo-caption">Our favorite moment 💕</div>
             </div>
 
             <div class="photo-card reveal">
                 <div class="party-hat">🥳</div>
-                <img src="foto5.jpg" alt="Memory 5">
-                <div class="photo-caption">
-                    Smile more! 😊
-                </div>
+                <img src="foto5.jpeg" alt="Memory 5">
+                <div class="photo-caption">Smile more! 😊</div>
             </div>
 
             <div class="photo-card reveal">
                 <div class="party-hat">🎂</div>
-                <img src="foto6.jpg" alt="Memory 6">
-                <div class="photo-caption">
-                    Birthday queen 👑
-                </div>
+                <img src="foto6.jpeg" alt="Memory 6">
+                <div class="photo-caption">Birthday queen 👑</div>
             </div>
 
             <div class="photo-card reveal">
                 <div class="party-hat">💗</div>
-                <img src="foto7.jpg" alt="Memory 7">
-                <div class="photo-caption">
-                    Sweet memory 🌷
-                </div>
+                <img src="foto7.jpeg" alt="Memory 7">
+                <div class="photo-caption">Sweet memory 🌷</div>
             </div>
 
             <div class="photo-card reveal">
                 <div class="party-hat">✨</div>
-                <img src="foto8.jpg" alt="Memory 8">
-                <div class="photo-caption">
-                    Seventeen looks beautiful 💕
-                </div>
+                <img src="foto8.jpeg" alt="Memory 8">
+                <div class="photo-caption">Seventeen looks beautiful 💕</div>
             </div>
 
         </div>
@@ -1073,9 +984,7 @@ section {
     </section>
 
 
-    <!-- =========================
-         LITTLE THINGS
-    ========================= -->
+    <!-- LITTLE THINGS -->
 
     <section>
 
@@ -1091,7 +1000,7 @@ section {
                 <h3>More Happiness</h3>
                 <p>
                     Semoga tahun ini dipenuhi lebih banyak
-                    momen yang membuat tersenyum.
+                    momen yang membuat tersenyum yaa sayaanggg.
                 </p>
             </div>
 
@@ -1118,9 +1027,7 @@ section {
     </section>
 
 
-    <!-- =========================
-         VIDEO
-    ========================= -->
+    <!-- VIDEO -->
 
     <section class="video-section">
 
@@ -1139,7 +1046,6 @@ section {
 
                 <source src="video.mp4" type="video/mp4">
 
-                Browser kamu tidak mendukung video.
             </video>
 
         </div>
@@ -1151,21 +1057,55 @@ section {
     </section>
 
 
-    <!-- =========================
-         FINAL MESSAGE
-    ========================= -->
+    <!-- REASON / SCREENSHOT PERMINTAAN -->
+
+    <section class="reason-section">
+
+        <div class="reveal">
+
+            <h2 class="reason-title">
+                Aku ngasih ini karena...
+            </h2>
+
+            <p class="reason-subtitle">
+                Ada satu hal yang masih aku ingat sampai sekarang 💗
+            </p>
+
+            <div class="request-frame">
+
+                <img
+                    src="permintaan.jpg"
+                    alt="Screenshot permintaan waktu itu"
+                >
+                <img
+                    src="permintaan1.jpg"
+                    alt="Screenshot permintaan waktu itu"
+                >
+
+                <div class="request-caption">
+                    Ternyata ada permintaan yang belum aku lupakan...
+                </div>
+
+                <div class="request-heart">
+                    💗 🌷 💗
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- FINAL MESSAGE -->
 
     <section class="final-section">
 
         <div class="final-card reveal">
 
-            <div class="big-heart">
-                💗
-            </div>
+            <div class="big-heart">💗</div>
 
-            <h2>
-                Happy Sweet Seventeen!
-            </h2>
+            <h2>Happy Sweet Seventeen!</h2>
 
             <p>
                 Selamat datang di chapter baru.
@@ -1180,10 +1120,7 @@ section {
                 And keep shining. ✨
             </p>
 
-            <div style="
-                margin-top:30px;
-                font-size:30px;
-            ">
+            <div style="margin-top:30px; font-size:30px;">
                 🎂 👑 💐 💗 ✨
             </div>
 
@@ -1194,9 +1131,7 @@ section {
 </main>
 
 
-<!-- =========================
-     MUSIC
-========================= -->
+<!-- MUSIC -->
 
 <audio id="music" loop preload="auto">
     <source src="musik.mp3" type="audio/mpeg">
@@ -1212,10 +1147,9 @@ section {
 
 <script>
 
-/* ========================================
-   COUNTDOWN
+/* COUNTDOWN
    TARGET: 16 NOVEMBER 2026 - 00:00 WIB
-======================================== */
+*/
 
 const targetDate =
     new Date("2026-11-16T00:00:00+07:00").getTime();
@@ -1241,22 +1175,15 @@ let countdownInterval = null;
 function updateCountdown() {
 
     const now = new Date().getTime();
-
     const distance = targetDate - now;
 
-
     if (distance <= 0) {
-
         unlockWebsite();
-
         return;
     }
 
-
     const days =
-        Math.floor(
-            distance / (1000 * 60 * 60 * 24)
-        );
+        Math.floor(distance / (1000 * 60 * 60 * 24));
 
     const hours =
         Math.floor(
@@ -1276,7 +1203,6 @@ function updateCountdown() {
             / 1000
         );
 
-
     daysElement.textContent =
         String(days).padStart(2, "0");
 
@@ -1291,9 +1217,7 @@ function updateCountdown() {
 }
 
 
-/* ========================================
-   MUSIC
-======================================== */
+/* MUSIC */
 
 const music =
     document.getElementById("music");
@@ -1307,13 +1231,10 @@ const musicStatus =
 const video =
     document.getElementById("birthdayVideo");
 
-
 const NORMAL_VOLUME = 0.70;
-
 const VIDEO_VOLUME = 0.10;
 
 let musicWasPlaying = false;
-
 
 music.volume = NORMAL_VOLUME;
 
@@ -1321,14 +1242,9 @@ music.volume = NORMAL_VOLUME;
 function updateMusicButton() {
 
     if (music.paused) {
-
-        musicStatus.textContent =
-            "Play Music";
-
+        musicStatus.textContent = "Play Music";
     } else {
-
-        musicStatus.textContent =
-            "Music On 🎵";
+        musicStatus.textContent = "Music On 🎵";
     }
 }
 
@@ -1336,29 +1252,18 @@ function updateMusicButton() {
 async function playMusic() {
 
     try {
-
         music.volume = NORMAL_VOLUME;
-
         await music.play();
-
         updateMusicButton();
 
     } catch (error) {
-
-        /*
-         Browser dapat memblokir autoplay
-         sampai user melakukan interaksi.
-        */
-
         updateMusicButton();
     }
 }
 
 
 function pauseMusic() {
-
     music.pause();
-
     updateMusicButton();
 }
 
@@ -1366,25 +1271,19 @@ function pauseMusic() {
 musicButton.addEventListener("click", () => {
 
     if (music.paused) {
-
         playMusic();
-
     } else {
-
         pauseMusic();
     }
 
 });
 
 
-/* ========================================
-   VIDEO + MUSIC VOLUME
-======================================== */
+/* VIDEO + MUSIC VOLUME */
 
 video.addEventListener("play", () => {
 
     musicWasPlaying = !music.paused;
-
     music.volume = VIDEO_VOLUME;
 
 });
@@ -1395,7 +1294,6 @@ video.addEventListener("pause", () => {
     music.volume = NORMAL_VOLUME;
 
     if (musicWasPlaying) {
-
         playMusic();
     }
 
@@ -1407,36 +1305,18 @@ video.addEventListener("ended", () => {
     music.volume = NORMAL_VOLUME;
 
     if (musicWasPlaying) {
-
         playMusic();
     }
 
 });
 
 
-/* ========================================
-   AUTOPLAY FALLBACK
-======================================== */
+/* AUTOPLAY FALLBACK */
 
-window.addEventListener(
-    "load",
-    () => {
+window.addEventListener("load", () => {
+    playMusic();
+});
 
-        /*
-         Coba autoplay saat halaman selesai.
-        */
-
-        playMusic();
-
-    }
-);
-
-
-/*
-   Kalau browser memblokir autoplay,
-   musik akan mulai ketika user pertama
-   kali menyentuh / mengklik halaman.
-*/
 
 let firstInteraction = false;
 
@@ -1448,7 +1328,6 @@ function firstUserInteraction() {
     firstInteraction = true;
 
     if (music.paused) {
-
         playMusic();
     }
 
@@ -1468,87 +1347,48 @@ document.addEventListener(
 );
 
 
-/* ========================================
-   UNLOCK WEBSITE
-======================================== */
+/* UNLOCK WEBSITE */
 
 function unlockWebsite() {
 
     lockScreen.classList.add("hidden");
 
     if (countdownInterval !== null) {
-
         clearInterval(countdownInterval);
-
         countdownInterval = null;
     }
 
-
-    /*
-       Confetti saat halaman terbuka.
-    */
-
     for (let i = 0; i < 40; i++) {
-
-        setTimeout(
-            createConfetti,
-            i * 50
-        );
-
+        setTimeout(createConfetti, i * 50);
     }
-
-
-    /*
-       Coba mulai musik.
-       Browser tetap dapat memblokirnya
-       jika belum ada user interaction.
-    */
 
     playMusic();
 }
 
 
-/*
-   Jalankan countdown.
-*/
+/* START COUNTDOWN */
 
 updateCountdown();
 
 countdownInterval =
-    setInterval(
-        updateCountdown,
-        1000
-    );
+    setInterval(updateCountdown, 1000);
 
 
-/* ========================================
-   CONFETTI
-======================================== */
+/* CONFETTI */
 
 function createConfetti() {
 
     const confetti =
         document.createElement("div");
 
-    confetti.className =
-        "confetti";
+    confetti.className = "confetti";
 
     const symbols = [
-        "💗",
-        "✨",
-        "🌸",
-        "🎀",
-        "💕",
-        "⭐",
-        "🌷"
+        "💗", "✨", "🌸", "🎀", "💕", "⭐", "🌷"
     ];
 
     confetti.textContent =
-        symbols[
-            Math.floor(
-                Math.random() * symbols.length
-            )
-        ];
+        symbols[Math.floor(Math.random() * symbols.length)];
 
     confetti.style.left =
         Math.random() * 100 + "vw";
@@ -1561,99 +1401,59 @@ function createConfetti() {
 
     document.body.appendChild(confetti);
 
-
     setTimeout(() => {
-
         confetti.remove();
-
     }, 6500);
 }
 
 
-/* ========================================
-   CLICK HEART EFFECT
-======================================== */
+/* CLICK HEART EFFECT */
 
-document.addEventListener(
-    "click",
-    function(event) {
+document.addEventListener("click", function(event) {
 
-        /*
-           Jangan buat efek hati ketika
-           menekan tombol music atau kontrol video.
-        */
-
-        if (
-            event.target.closest(
-                ".music-control"
-            ) ||
-            event.target.closest(
-                "video"
-            )
-        ) {
-            return;
-        }
-
-
-        const heart =
-            document.createElement("div");
-
-        heart.className =
-            "click-heart";
-
-        heart.textContent =
-            Math.random() > .5
-            ? "💗"
-            : "💕";
-
-
-        heart.style.left =
-            event.clientX + "px";
-
-        heart.style.top =
-            event.clientY + "px";
-
-
-        document.body.appendChild(heart);
-
-
-        setTimeout(() => {
-
-            heart.remove();
-
-        }, 1200);
-
+    if (
+        event.target.closest(".music-control") ||
+        event.target.closest("video")
+    ) {
+        return;
     }
-);
+
+    const heart =
+        document.createElement("div");
+
+    heart.className = "click-heart";
+
+    heart.textContent =
+        Math.random() > .5 ? "💗" : "💕";
+
+    heart.style.left = event.clientX + "px";
+    heart.style.top = event.clientY + "px";
+
+    document.body.appendChild(heart);
+
+    setTimeout(() => {
+        heart.remove();
+    }, 1200);
+
+});
 
 
-/* ========================================
-   SCROLL REVEAL
-======================================== */
+/* SCROLL REVEAL */
 
 const revealElements =
     document.querySelectorAll(".reveal");
-
 
 const revealObserver =
     new IntersectionObserver(
         (entries) => {
 
-            entries.forEach(
-                (entry) => {
+            entries.forEach((entry) => {
 
-                    if (
-                        entry.isIntersecting
-                    ) {
-
-                        entry.target.classList.add(
-                            "show"
-                        );
-
-                    }
-
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("show");
                 }
-            );
+
+            });
 
         },
         {
@@ -1662,15 +1462,9 @@ const revealObserver =
     );
 
 
-revealElements.forEach(
-    (element) => {
-
-        revealObserver.observe(
-            element
-        );
-
-    }
-);
+revealElements.forEach((element) => {
+    revealObserver.observe(element);
+});
 
 </script>
 
